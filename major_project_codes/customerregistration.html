@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+         </script>
+    <!-- google font link -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap')
+    </style>
+  <!-- // form logic and validation -->
+  <script type="text/javascript">
+    function validate(){
+      var a = document.forms[0].elements[0].value;
+      if(a==null||a==""){
+        document.getElementById("a").innerHTML="<font color=red> Enter Name </font>";
+        return false;
+      }
+
+      var b = document.forms[0].elements[2].value;
+      if(b==null||b==""){
+        document.getElementById("b").innerHTML="<font color=red> Enter Password </font>";
+        return false
+      }
+      if(b.length<8){
+        document.getElementById("b").innerHTML="<font color=red> Password cannot be less than 8 charecters </font>";
+          return false;
+      }
+      var c = document.forms[0].elements[3].value;
+      if(b!=c){
+      document.getElementById("c").innerHTML="<font color=red> Passwords Dont Match </font>";
+      return false;
+      }
+
+      var d = document.forms[0].elements[4].value;
+      if(d==null||d==""){
+      document.getElementById("d").innerHTML="<font color=red> Enter Address </font>";
+        return false;
+      }
+      if(d.length<10){
+      document.getElementById("d").innerHTML="<font color=red> Address should be greater than 10 charecters </font>";
+        return false;
+      }
+
+      var e = document.forms[0].elements[5].value;
+      if(e==null||e==""){
+      document.getElementById("e").innerHTML="<font color=red> Enter Mobile Number </font>";
+        return false;
+      }
+        
+      if(isNaN(e)){
+      document.getElementById("e").innerHTML="<font color=red> Mobile Number Should be in Numeric format </font>";
+        return false;
+      }
+      if(e.length!=10){
+      document.getElementById("e").innerHTML="<font color=red> Mobile Number Should be 10 digits only </font>";
+      return false;
+      }
+      
+
+
+
+      return true;
+    }
+
+</script>
+ 
+
+
+<style>
+  /*  text font colors*/
+   body, div, p, h2, input, select {
+      color: #FFFFFF; /* White font color */
+      font-family:Josefin Sans;
+/*          font-size: 25px;*/
+    }
+/*    <!-- to stop the resizing of the address box we use css -->*/
+  .address-textarea {
+    width: 100%; /* Set the width to 100% */
+    resize: none; /* Prevent resizing */
+  }
+
+  select {
+    width: 100%; /* Set the width to 100% */
+  }
+</style>
+
+<style>
+/*  background img */
+body {
+  background-image: url('universalbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+</head>
+<body>
+  <form action="customerinsert.php" onsubmit="return validate()">
+  <br><br><br>  
+<h2 align="center" class="">Create Account</h2><br>
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-6 ">Name</div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-6 "><input type="text" name="txt1" class="form-control" placeholder="Enter Name"> 
+    <p id="a"></p></div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-3">Email</div>
+  <div class="col-lg-3">Password</div>
+  <div class="col-lg-3">Confirm Password</div>
+  <div class="col-lg-1"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-3 "><input type="email" name="txt2" class="form-control" placeholder="Enter Email"required>
+     
+  </div>
+  <div class="col-lg-3"><input type="password" name="txt3" class="form-control" placeholder="Enter Password">
+    <p id="b"></p>
+  </div>
+  <div class="col-lg-3"><input type="password" name="txtcpass" class="form-control" placeholder="Confirm Password">
+     <p id="c"></p>
+  </div>
+  <div class="col-lg-1"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-3 ">Address </div>
+  <div class="col-lg-3">Mobile number</div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-3 text-primary"><textarea name="txt4"
+   class="form-control address-textarea" cols="50" placeholder="Enter Delivery Address"></textarea>  <p id="d"></p><br></div>
+  <div class="col-lg-3"><input type="text" name="txt5" class="form-control" placeholder="Enter Mobile Number"><p id="e"></p></div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+
+<div class="row">
+    <div class="col-lg-5"></div>
+      <div class="col-lg-3"><input type="submit" class="btn btn-success btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="body.html" class="btn btn-danger btn-lg">Back</a></div>
+          
+    <div class="col-lg-3"></div>
+  </div><br>
+
+<div class="row">
+    <div class="col-lg-5"></div>
+  <div class="col-lg-2"><a class="btn btn-info" href="customerlogin.html">Existing User? Click here to login </a></div>
+  <div class="col-lg-5"></div>
+  </div>
+</form>
+</body>
+</html>

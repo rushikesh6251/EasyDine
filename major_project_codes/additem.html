@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+         </script>
+    <!-- google font link -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap')
+    </style>
+  <!-- // form logic and validation -->
+  <script type="text/javascript">
+    function validate(){
+      var a = document.forms[0].elements[0].value;
+      if(a==null||a==""){
+        document.getElementById("a").innerHTML="<font color=red> Enter Item Name </font>";
+        return false;
+      }
+
+      var b = document.forms[0].elements[1].value;
+      if(b==null||b==""){
+        document.getElementById("b").innerHTML="<font color=red> Enter Price </font>";
+        return false;
+      }
+      if(isNaN(b)){
+      document.getElementById("b").innerHTML="<font color=red> Price Should be in Numeric format </font>";
+        return false;
+      }
+
+      var c = document.forms[0].elements[2].value;
+      if(c==null||c==""){
+        document.getElementById("c").innerHTML="<font color=red> Enter Selling Price </font>";
+        return false;
+      }
+      if(isNaN(c)){
+      document.getElementById("c").innerHTML="<font color=red> Price Should be in Numeric format </font>";
+        return false;
+      }
+
+  
+      var d = document.forms[0].elements[3].value;
+      if(d==null||d==""){
+      document.getElementById("d").innerHTML="<font color=red> Enter Quantity </font>";
+        return false;
+      }
+        if(isNaN(d)){
+      document.getElementById("d").innerHTML="<font color=red> Quantity Should be in Numeric format </font>";
+        return false;
+      }
+      
+      return true;
+    }
+
+</script>
+ 
+
+<!-- to stop the resizing of the address box we use css -->
+<style>
+  /*  text font colors*/
+   body, div, p, h2, input, select {
+      color: #FFFFFF; /* White font color */
+      font-family:Josefin Sans;
+/*          font-size: 25px;*/
+    }
+    
+  select {
+    width: 100%; /* Set the width to 100% */
+  }
+</style>
+
+
+</head>
+<body style="background-color: black">
+  <form action="additem.php" onsubmit="return validate()">
+  <br><br><br>  
+<h2 align="center" class="">Add Menu Item</h2><br>
+
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4 ">Item Name</div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4 "><input type="text" name="txt1" class="form-control" placeholder="Enter Item Name">  <p id="a"></p></div>
+  <div class="col-lg-4"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-4 ">Cost Price</div>
+  <div class="col-lg-4">Selling Price</div>
+  <div class="col-lg-2"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-4 "><input type="text" name="txt2" class="form-control" placeholder="Enter Cost Price">  <p id="b"></p></div>
+    <div class="col-lg-4 "><input type="text" name="txt3" class="form-control" placeholder="Enter Selling Price">  <p id="c"></p></div>
+  <div class="col-lg-2"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-4">Item Type</div>
+  <div class="col-lg-4">Available Quantity</div>
+  <div class="col-lg-2"></div>
+</div></br>
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-4 "> <select name="txt4" class="form-control" required>
+  <option value="">Select Item Type</option>
+  <option value="Main Course">Main course</option>
+  <option value="Sides">Sides</option>
+  <option value="Deserts">Deserts</option>
+  <option value="Bevrages">Drinks</option>
+</select>
+  </div>
+  <div class="col-lg-4"><input type="text" name="txt5" class="form-control" placeholder="Enter Available Quantity">
+    <p id="e"></p></div>
+  <div class="col-lg-2"></div>
+</div></br>
+
+<div class="row">
+    <div class="col-lg-5"></div>
+      <div class="col-lg-3"><input type="submit" class="btn btn-success btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="menumanage.html" class="btn btn-danger btn-lg">Back</a></div>
+          
+    <div class="col-lg-3"></div>
+  </div><br>
+
+
+</form>
+</body>
+</html>

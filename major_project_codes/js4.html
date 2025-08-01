@@ -1,0 +1,101 @@
+<!--totally working -->
+<!-- sample validation form -->
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<script type="text/javascript">
+		function validate()
+		{
+			var a=document.forms[0].elements[0].value;
+			if(a==null || a=="")
+			{
+				document.getElementById("a").innerHTML="<font color=red> Fill Name </font>";
+				return false;
+				
+			}
+			var b=document.forms[0].elements[1].value;
+			if(b==null || b=="")
+			{
+				document.getElementById("b").innerHTML="<font color=red> Fill Age </font>";
+				return false;
+				
+			}
+			if(isNaN(b))
+			{
+				document.getElementById("b").innerHTML="<font color=red> Age should be in numbers </font>";
+				return false;
+			}
+			if(!(b>=18 && b<=60))
+			{
+				document.getElementById("b").innerHTML="<font color=red> Age should be between 18 and 60</font>";
+				return false;
+			}
+			var c = document.forms[0].elements[2].value;
+			if(c==null||c==""){
+				document.getElementById("c").innerHTML="<font color=red> fill password</font>";
+				return false
+			}
+			if(c.length<8){
+				document.getElementById("c").innerHTML="<font color=red> pass word cannot be less than 8 charecters</font>";
+				return false;
+			}
+			var d = document.forms[0].elements[3].value;
+			if(c!=d){
+				document.getElementById("d").innerHTML="<font color=red> password mismatch</font>";
+				return false;
+			}
+			var e = document.forms[0].elements[5].value;
+			if(e==null||e=="")
+			{
+				document.getElementById("e").innerHTML="<font color=red> fill mobile number</font>";
+				return false;
+			}
+			if(isNaN(e))
+			{
+				document.getElementById("e").innerHTML="<font color=red> mobile number must be numeric</font>";
+				return false;
+			}
+			if(e.length!=10)
+			{
+				document.getElementById("e").innerHTML="<font color=red>mobile number must be 10 digits </font>";
+				return false;
+			}
+
+
+
+			return true;
+		}
+	</script>
+</head>
+<body>
+    <form action="rushikesh1.php" onsubmit="return validate()">
+    	name:<br>
+    	<input type="text" name="txt1">
+    	<br><p id="a"></p><br>
+         Age:<br>
+         <input type="text" name="txt2">
+         <br> <p id="b"></p><br>
+         Password:<br>
+         <input type="password" name="txtpass">
+         <br><p id="c"></p>
+
+         Confirm Password:<br>
+         <input type="password" name="txtcpass">
+         <br><p id="d"></p>
+
+         Email:<br>	
+         <input type="email" name="txtemail" required><br>
+
+         Mobile Number:<br>
+         <input type="mno" name="txtmno">
+         <br> <p id="e"></p>	
+
+
+
+
+    	<input type="submit">
+
+    </form>
+</body>
+</html>
