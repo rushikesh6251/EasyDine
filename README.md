@@ -91,5 +91,5 @@ Contributions are what make the open-source community such an amazing place to l
 ## 📞 Contact
 
 Rushikesh - [@rushikesh6251](mailto:rushikesh6251@gmail.com)
-
-Project Link: [https://github.com/rushikesh6251/easydine](https://www.google.com/search?q=https://github.com/rushikesh6251/easydine)
+LinkedIN - [https://www.linkedin.in/rushikesh6251)](https://www.linkedin.com/in/rushikesh6251/)
+Project Link: [https://github.com/rushikesh6251/easydine](https://www.google.com/search?q=https://github.com/rushikesh6251/EasyDine)
